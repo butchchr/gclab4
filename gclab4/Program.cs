@@ -23,16 +23,15 @@ namespace gclab4
                 {
                     Console.WriteLine("Input is not a integer");
                 }
-
-                for (int i = 0; i != userInt; i++)
+                int i = 1;
+                while (i <= userInt)
                 {
                     int numSquare = i * i;
                     int numCubed = i * i * i;
 
-
-                    int[] number = { 1 };
-                    int[] squared = { 2 };
-                    int[] cubed = { 3 };
+                    int [] number = {i++};
+                    int [] squared = {numSquare};
+                    int[] cubed = {numCubed};
                     String s = String.Format("{0,-10} {1,-10} {2,-10}\n\n", "Number", "Squared", "Cubed");
                     for (int index = 0; index < number.Length; index++)
                     {
