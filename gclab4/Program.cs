@@ -24,40 +24,38 @@ namespace gclab4
                     Console.WriteLine("Input is not a integer");
                 }
 
-                do while (int i = 1; i != userInt; i++)
+                for (int i = 0; i != userInt; i++)
                 {
-                    int i = 1
-                    int numSquared = i * i;
+                    int numSquare = i * i;
                     int numCubed = i * i * i;
+
+
+                    int[] number = { 1 };
+                    int[] squared = { 2 };
+                    int[] cubed = { 3 };
+                    String s = String.Format("{0,-10} {1,-10} {2,-10}\n\n", "Number", "Squared", "Cubed");
+                    for (int index = 0; index < number.Length; index++)
+                    {
+                        s += String.Format("{0,-10} {1,-10:N0} {2, -10:N0}\n", number[index], squared[index], cubed[index]);
+                        Console.WriteLine($"\n{s}");
+                    }
                 }
+                
+                    //continue y/n
+                    bool invalid = true;
+                    while (invalid)
+                    {
+                        Console.WriteLine("Continue? (y/n):");
+                        ConsoleKeyInfo pressed = Console.ReadKey();
+                        Console.WriteLine();
+                        bool isY = pressed.Key == ConsoleKey.Y;
+                        bool isN = pressed.Key == ConsoleKey.N;
 
-                //Console.WriteLine("Number Squared Cubed");
-                //Console.WriteLine("======= ======= =======");
-                //Console.WriteLine(); 1 1^2 1^3
+                        invalid = !isY && !isN;
+                        y = isY;
 
-                int[] number = {1};
-                int[] squared = {2};
-                int[] cubed = {3};
-                String s = String.Format("{0,-10} {1,-10} {2,-10}\n\n", "Number", "Squared", "Cubed");
-                for (int index = 0; index < number.Length; index++)
-                {
-                    s += String.Format("{0,-10} {1,-10:N0} {2, -10:N0}\n", number[index], squared[index], cubed[index]);
-                    Console.WriteLine($"\n{s}");
-                }
-                //continue y/n
-                bool invalid = true;
-                while (invalid)
-                {
-                    Console.WriteLine("Continue? (y/n):");
-                    ConsoleKeyInfo pressed = Console.ReadKey();
-                    Console.WriteLine();
-                    bool isY = pressed.Key == ConsoleKey.Y;
-                    bool isN = pressed.Key == ConsoleKey.N;
-
-                    invalid = !isY && !isN;
-                    y = isY;
-
-                }
+                    }
+                
             }
         }
     }
